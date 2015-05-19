@@ -17,7 +17,6 @@ function requestEvent(req, res){
     }
 	
     resource = "."+resource;  
-
     switch(extention){
     	case ".css":
        		contentType = "text/css";
@@ -30,9 +29,9 @@ function requestEvent(req, res){
     }
 
     //Validar si existe el recurso
-    fs.exists(recurso,function(exist){
+    fs.exists(resource,function(exist){
         if(exist){
-            fs.readFile(recurso,function(err,data){
+            fs.readFile(resource,function(err,data){
                 if(err){
                     res.writeHead(500);
                     res.end("Internal Error");
