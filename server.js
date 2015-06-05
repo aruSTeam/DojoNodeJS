@@ -1,7 +1,7 @@
 //Importar librerias
 var http = require("http");
 var path = require("path");
-var filesystem = require("fs");
+var fs = require("fs");
 
 //Funcion de respuesta
 function requestEvent(req, res){
@@ -47,4 +47,6 @@ function requestEvent(req, res){
             res.end("Not Found");
         }
     });
-_
+}
+
+var server = http.createServer(requestEvent).listen(4444);
